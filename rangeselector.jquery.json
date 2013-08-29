@@ -1,0 +1,30 @@
+{
+  "name": "rangeselector",
+  "version": "1.0.0",
+  "title": "jQuery Range Selector",
+  "author": {
+    "name": "Jason Ni",
+    "email": "jasonni1231@gmail.com",
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.2.3"
+  },
+  "description": "A simple, fase lightweight jQuery plugin for multi-select select checkboxes with shift key.",
+  "keywords": [
+    "checkbox",
+    "shift"
+  ],
+  "homepage": "",
+  "docs": "https://github.com/jasonni/jquery-rangeselector",
+  "demo": "",
+  "download": "",
+  "bugs": "",
+  "maintainers": []
+}
