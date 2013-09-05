@@ -1,5 +1,5 @@
 /*!
- * Range Selector v1.0.0 
+ * Range Selector v1.0.2 
  * https://github.com/jasonni/jquery-rangeselector
  *
  * Copyright 2013 Jason Ni 
@@ -14,6 +14,7 @@
         var $last,
             _lastId,
             _idstr,
+            _isBatchTrigger = false, // avoid recursive click flag.
             PREFIX = prefix || 'range-select-';
 
         // Range selection whit shiftKey.
@@ -24,11 +25,12 @@
                 to,
                 start,
                 end;
+
             if (e.shiftKey && $last) {
 
                 // if last id is the same, uncheck last checkbox.
-                if (_lastId === $last.prop('id')) {
-                    $(_idstr).prop('checked', false);
+                if (_idstr && _lastId === $last.prop('id')) {
+                    $(_idstr).trigger('click');
                 }
                 from = $last.prop('id').replace(PREFIX, '') * 1;
                 to = $checkbox.prop('id').replace(PREFIX, '') * 1;
@@ -39,9 +41,21 @@
                     idContainer.push('#' + PREFIX + end);
                 }
                 _idstr = idContainer.join(',');
-                $(_idstr).prop('checked', true);
+
+                // batch click start.
+                _isBatchTrigger = true;
+
+                $(_idstr).not(':checked').trigger('click');
             
+                //batch click end.
+                _isBatchTrigger = false;
+
             } else {
+
+                if (_isBatchTrigger) {
+                    return;
+                }
+
                 $last = $checkbox;
                 _lastId = $last.prop('id');
                 _idstr = '';
