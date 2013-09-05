@@ -1,5 +1,5 @@
 /*!
- * Range Selector v1.0.2 
+ * Range Selector v1.0.2
  * https://github.com/jasonni/jquery-rangeselector
  *
  * Copyright 2013 Jason Ni 
@@ -30,7 +30,16 @@
 
                 // if last id is the same, uncheck last checkbox.
                 if (_idstr && _lastId === $last.prop('id')) {
+                    
+                    // batch click start.
+                    _isBatchTrigger = true;
+
                     $(_idstr).trigger('click');
+
+                    //batch click end.
+                    _isBatchTrigger = false;
+
+                    idContainer.length = 0;
                 }
                 from = $last.prop('id').replace(PREFIX, '') * 1;
                 to = $checkbox.prop('id').replace(PREFIX, '') * 1;
