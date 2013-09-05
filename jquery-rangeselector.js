@@ -50,10 +50,6 @@
         });
     };    
 
-    RangeSelector.prototype.selectRange = function () {
-    };
-
-
     // RangeSelector plugin definition
     // ===============================
 

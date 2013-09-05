@@ -3,6 +3,9 @@ A simple, fast lightweight jQuery plugin for multi-select checkbox with shift ke
 Why fast ??  
 Because the **id** is the fastest selector we know it.  
 
+## Demo Page
+http://jasonni.github.io/rangeselector/
+
 ## Installation
 Include script after the jQuery library.
 
