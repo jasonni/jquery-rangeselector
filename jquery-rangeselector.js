@@ -1,5 +1,5 @@
 /*!
- * Range Selector v1.0.2
+ * Range Selector 1.0.3
  * https://github.com/jasonni/jquery-rangeselector
  *
  * Copyright 2013 Jason Ni 
